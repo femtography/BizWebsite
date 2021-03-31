@@ -1,0 +1,41 @@
+{% extends "./base2.html" %}
+
+{% block content %}
+<div class="container-ac">
+  <div class="container-contact rounded m-auto shadow-lg">
+    <h1>Contact Us</h1>
+    <form method="POST" action="{% url 'contact' %}" class="needs-validation" id="thinner" novalidate>
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="Input1">Name</label>
+        <input name="user_name" type="text" class="form-control" id="Input1" placeholder="Your Name" required>
+        <div class="valid-feedback">Great name!</div>
+        <div class="invalid-feedback">Please provide your name.</div>
+      </div>
+      <div class="form-group">
+        <label for="Input2">Email address</label>
+        <input name="user_email" type="email" class="form-control" id="Input2" placeholder="name@sender.com" required>
+        <div class="valid-feedback">Great email!</div>
+        <div class="invalid-feedback">Please provide your email.</div>
+      </div>
+      <div class="form-group">
+        <label for="Select1">Category</label>
+        <select name="category" class="form-control" id="Select1" required>
+          <option>Customer Service</option>
+          <option>Customer Feedback</option>
+          <option>Billing</option>
+          <option>Other</option>
+        </select>
+        <div class="valid-feedback">Perfect!</div>
+        <div class="invalid-feedback">Please provide your email.</div>
+      </div>
+      <div class="form-group">
+        <label for="Textarea1">Message</label>
+        <textarea name="message" class="form-control" id="Textarea1" rows="6" required></textarea>
+        <div class="invalid-feedback">Please enter your message.</div>
+      </div>
+      <input type="submit" class="btn btn-lg btn-outline-light pinky2 m-auto">
+    </form>
+  </div>
+</div>
+{% endblock %}

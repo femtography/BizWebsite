@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Hey</title>
-  </head>
-  <body>
-    <h1>Hello</h1>
-  </body>
-</html>
+{% extends "./base2.html" %}
+
+{% block content %}
+<div class="container-landing" style="background: url('https://flores-creations.s3.us-east-2.amazonaws.com/BG7.jpg') no-repeat center top fixed;" >
+  <h1>Hand Crafted Masks</h1>
+  <a role="button" class="btn btn-lg btn-outline-light pinky" href="/shoppe">Shop Masks</a>
+</div>
+<div class="container-wb">
+  <h1>Featured Masks</h1>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      {% for item in items %}
+      {% if item.name == active_i.name %}
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{ item.name }}" class="active"></li>
+      {% else %}
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{ item.name }}"></li>
+      {% endif %}
+      {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+      {% for item in items %}
+      {% if item.name == active_i.name %}
+      <div class="carousel-item active rounded shadow-lg">
+      {% else %}
+      <div class="carousel-item rounded shadow-lg">
+      {% endif %}
+        <a href="/product/{{ item.name }}">
+          <img class="d-block w-100" src="https://flores-creations.s3.us-east-2.amazonaws.com/{{ item.feature_pic }}" alt="{{ item.name }} Slide">
+        </a>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{ item.name }}</h5>
+          <p>{{ item.short_d }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+{% endblock %}

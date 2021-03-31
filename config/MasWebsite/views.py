@@ -6,6 +6,9 @@ def index (request):
 def about(request):
     return render(request, 'MasWebsite/about.html')
 
+def shoppe(request):
+    return render(request, 'MasWebsite/shoppe.html')
+
 def contact(request):
     if request.method == 'POST':
         message = request.POST['message']

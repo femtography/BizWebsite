@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from MasWebsite.models import Product
 
 def index (request):
-    return render(request, 'MasWebsite/index.html')
+    p = Product.objects.create(name="Hella")
+    return render(request, 'MasWebsite/index.html', {"prod": p})
 
 def about(request):
     return render(request, 'MasWebsite/about.html')

@@ -2,13 +2,16 @@ from django.shortcuts import render
 from MasWebsite.models import Product
 
 def index (request):
-    return render(request, 'MasWebsite/index.html', {"prod": p})
+    featured_prod = Product.objects.all().filter(is_featured=True)
+    active_i = featured_prod[0].name
+    return render(request, 'MasWebsite/index.html', {"ProdList": featured_prod, "ActiveImage": active_i})
 
 def about(request):
     return render(request, 'MasWebsite/about.html')
 
 def shoppe(request):
-    return render(request, 'MasWebsite/shoppe.html')
+    featured_prod = Product.objects.all()
+    return render(request, 'MasWebsite/shoppe.html', {"ProdList": featured_prod})
 
 def contact(request):
     if request.method == 'POST':

@@ -7,3 +7,4 @@ class Product(models.Model):
     category = models.CharField(max_length=15)
     url = models.CharField(max_length=100)
     is_featured = models.BooleanField(default=False)
+ 

@@ -7,86 +7,28 @@
       <div class="menu rounded shadow">
         <h4 style="text-decoration: underline;">Products</h4>
         <p></p>
-        <p>Masks</p>
-        <p>Shirts</p>
-        <p>Sweaters</p>
-        <p>Hats</p>
-        <p>Doggy Apparel</p>
+        <a role="button" class="btn btn-sm pinky4" href="/">Masks</a>
+        <a role="button" class="btn btn-sm pinky4" href="/">Shirts</a>
+        <a role="button" class="btn btn-sm pinky4" href="/">Sweaters</a>
+        <a role="button" class="btn btn-sm pinky4" href="/">Hats</a>
+        <a role="button" class="btn btn-sm pinky4" href="/">Doggy Apparel</a>
       </div>
     </div>
     <div class="container-shoppe-right mr-auto rounded shadow">
+      {% for item in ProdList %}
       <div class="card shadow" style="width: 18rem;">
-        <a href="/product">
-          <img src="https://flores-creations.s3.us-east-2.amazonaws.com/M1.jpeg" class="card-img-top" alt="...">
+        <a href="/shoppe">
+          <img src="{{ item.url }}" class="card-img-top" alt="{{ item.name }}">
         </a>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.short_d }}</p>
         </div>
         <div class="card-body">
           <a role="button" class="btn btn-sm pinky4" href="/cart">Buy</a>
         </div>
       </div>
-      <div class="card shadow" style="width: 18rem;">
-        <a href="/product">
-          <img src="https://flores-creations.s3.us-east-2.amazonaws.com/M2.jpeg" class="card-img-top" alt="...">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-body">
-          <a role="button" class="btn btn-sm pinky4" href="/cart">Buy</a>
-        </div>
-      </div>
-      <div class="card shadow" style="width: 18rem;">
-        <a href="/product">
-          <img src="https://flores-creations.s3.us-east-2.amazonaws.com/M3.jpeg" class="card-img-top" alt="...">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-body">
-          <a role="button" class="btn btn-sm pinky4" href="/cart">Buy</a>
-        </div>
-      </div>
-      <div class="card shadow" style="width: 18rem;">
-        <a href="/product">
-          <img src="https://flores-creations.s3.us-east-2.amazonaws.com/M4.jpeg" class="card-img-top" alt="...">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-body">
-          <a role="button" class="btn btn-sm pinky4" href="/cart">Buy</a>
-        </div>
-      </div>
-      <div class="card shadow" style="width: 18rem;">
-        <a href="/product">
-          <img src="https://flores-creations.s3.us-east-2.amazonaws.com/M5.jpeg" class="card-img-top" alt="...">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-body">
-          <a role="button" class="btn btn-sm pinky4" href="/cart">Buy</a>
-        </div>
-      </div>
-      <div class="card shadow" style="width: 18rem;">
-        <a href="/product">
-          <img src="https://flores-creations.s3.us-east-2.amazonaws.com/M6.jpeg" class="card-img-top" alt="...">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-body">
-          <a role="button" class="btn btn-sm pinky4" href="/cart">Buy</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>

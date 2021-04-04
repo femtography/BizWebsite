@@ -294,6 +294,10 @@
 .container-cart-products-details-summary h3 {
   margin-top: 3vh;
 }
+.carousel-caption {
+  background-color: #e3f2fd;
+  opacity: .7;
+}
 footer {
   text-align: center;
   background: #e3f2fd;

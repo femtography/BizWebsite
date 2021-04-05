@@ -305,9 +305,9 @@
   padding-top: 0;
   padding-bottom: 0;
 }
-.container-prodview {
+
+.container-prodview img {
   max-width: 70vw;
-  margin-left: 12.5vw;
 }
 .product-card {
   padding: 2vw;

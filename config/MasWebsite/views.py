@@ -9,6 +9,9 @@ def index (request):
 def about(request):
     return render(request, 'MasWebsite/about.html')
 
+def product(request):
+    return render(request, 'MasWebsite/product.html')
+
 def shoppe(request):
     featured_prod = Product.objects.all()
     return render(request, 'MasWebsite/shoppe.html', {"ProdList": featured_prod})

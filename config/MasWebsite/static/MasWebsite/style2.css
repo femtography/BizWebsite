@@ -42,8 +42,8 @@
 .container-ac {
   background: #F6EBEA;
   min-height: 80vh;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 .container-contact {
   max-width: 44vw;
@@ -298,6 +298,21 @@
   background-color: #e3f2fd;
   opacity: .7;
 }
+.container-product {
+  display: inline-block;
+  text-align: center;
+  align-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.container-prodview {
+  max-width: 70vw;
+  margin-left: 12.5vw;
+}
+.product-card {
+  padding: 2vw;
+}
+
 footer {
   text-align: center;
   background: #e3f2fd;

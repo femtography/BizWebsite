@@ -9,11 +9,12 @@ def index (request):
 def about(request):
     return render(request, 'MasWebsite/about.html')
 
-def product(request):
-    return render(request, 'MasWebsite/product.html')
+def product(request, product_name):
+    prod = Product.objects.get(name = product_name)
+    return render(request, 'MasWebsite/product.html', {'Product': prod})
 
 def shoppe(request):
-    featured_prod = Product.objects.all()
+    featured_prod = Product.objects.all().order_by('name')
     return render(request, 'MasWebsite/shoppe.html', {"ProdList": featured_prod})
 
 def contact(request):

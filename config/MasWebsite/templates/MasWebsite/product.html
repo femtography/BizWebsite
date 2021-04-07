@@ -7,12 +7,12 @@
       <div class="card mb-3" style="max-width: 80vw; margin-left: 8vw;">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="https://flores-creations.s3.us-east-2.amazonaws.com/IMG_2249.JPG" style="max-width: 45vw;" alt="...">
+            <img src="{{ Product.url }}" style="max-width: 45vw;" alt="{{ Product.name }}">
           </div>
           <div class="col-md-5" style="margin-left: 18.5vw; padding-top: 5vh;">
             <div class="card-body">
-              <h1 class="card-title">Card title</h1>
-              <p class="card-text" style="padding-top: 5vh;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <h1 class="card-title">{{ Product.name }}</h1>
+              <p class="card-text" style="padding-top: 5vh;">{{ Product.short_d }}</p>
             </div>
           </div>
         </div>

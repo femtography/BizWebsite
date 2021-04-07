@@ -24,7 +24,7 @@
         {% elif item.name != ActiveImage %}
         <div class="carousel-item rounded shadow-lg">
         {% endif %}
-          <a href="/product">
+          <a href="product/{{ item.name }}">
             <img class="d-block w-100" src="{{ item.url }}" alt="{{ item.name }} Slide">
           </a>
           <div class="carousel-caption d-none d-md-block">

@@ -17,7 +17,7 @@
     <div class="container-shoppe-right mr-auto rounded shadow">
       {% for item in ProdList %}
       <div class="card shadow" style="width: 18rem;">
-        <a href="/product">
+        <a href="product/{{ item.name }}">
           <img src="{{ item.url }}" class="card-img-top" alt="{{ item.name }}">
         </a>
         <div class="card-body">
@@ -25,7 +25,7 @@
           <p class="card-text">{{ item.short_d }}</p>
         </div>
         <div class="card-body">
-          <a role="button" class="btn btn-sm pinky4" href="/cart">Buy</a>
+          <a role="button" class="btn btn-sm pinky4" href="product/{{ item.name }}">Buy</a>
         </div>
       </div>
       {% endfor %}

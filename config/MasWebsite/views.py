@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from MasWebsite.models import Product
+from MasWebsite.models import Product, Sale
 
 def index (request):
     featured_prod = Product.objects.all().filter(is_featured=True)
     active_i = featured_prod[0].name
-    return render(request, 'MasWebsite/index.html', {"ProdList": featured_prod, "ActiveImage": active_i})
+    featured_sale = Sale.objects.all()
+    return render(request, 'MasWebsite/index.html', {"ProdList": featured_prod, "ActiveImage": active_i, 'SaleTime': featured_sale})
 
 def about(request):
     return render(request, 'MasWebsite/about.html')

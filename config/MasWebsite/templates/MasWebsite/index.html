@@ -1,11 +1,20 @@
 {% extends "./base2.html" %}
 
 {% block content %}
-<div class="container-landing" style="background: url('https://flores-creations.s3.us-east-2.amazonaws.com/BG7.jpg') no-repeat center top fixed;" >
+<div class="container-landing" style="background: url('https://flores-creations.s3.us-east-2.amazonaws.com/BG7.jpg')  center top fixed;" >
   <h1>Hand Crafted Masks</h1>
   <a role="button" class="btn btn-lg btn-outline-light pinky" href="shoppe/all">Shop Masks</a>
 </div>
 <div class="container-wb">
+  {% for sale in SaleTime %}
+    <h1>Current Sale!</h1>
+    <p>{{ sale.name }}</p>
+    <a href="/contact"><img src="{{ sale.url }}" alt="{{ sale.name }}"></a
+      <br>
+      <br>
+      <br>
+      <br>
+  {% endfor %}
   <h1>Featured Masks</h1>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">

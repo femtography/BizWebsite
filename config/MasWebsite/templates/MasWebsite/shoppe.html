@@ -7,17 +7,15 @@
       <div class="menu rounded shadow">
         <h4 style="text-decoration: underline;">Products</h4>
         <p></p>
-        <a role="button" class="btn btn-sm pinky4" href="/">Masks</a>
-        <a role="button" class="btn btn-sm pinky4" href="/">Shirts</a>
-        <a role="button" class="btn btn-sm pinky4" href="/">Sweaters</a>
-        <a role="button" class="btn btn-sm pinky4" href="/">Hats</a>
-        <a role="button" class="btn btn-sm pinky4" href="/">Doggy Apparel</a>
+        <a role="button" class="btn btn-sm pinky4" href="/shoppe/all">All</a>
+        <a role="button" class="btn btn-sm pinky4" href="/shoppe/Mask">Masks</a>
+        <a role="button" class="btn btn-sm pinky4" href="/shoppe/Doggy">Doggy Apparel</a>
       </div>
     </div>
     <div class="container-shoppe-right mr-auto rounded shadow">
       {% for item in ProdList %}
       <div class="card shadow" style="width: 18rem;">
-        <a href="product/{{ item.name }}">
+        <a href="/product/{{ item.name }}">
           <img src="{{ item.url }}" class="card-img-top" alt="{{ item.name }}">
         </a>
         <div class="card-body">
@@ -25,7 +23,7 @@
           <p class="card-text">{{ item.short_d }}</p>
         </div>
         <div class="card-body">
-          <a role="button" class="btn btn-sm pinky4" href="product/{{ item.name }}">Buy</a>
+          <a role="button" class="btn btn-sm pinky4" href="/product/{{ item.name }}">Buy</a>
         </div>
       </div>
       {% endfor %}
